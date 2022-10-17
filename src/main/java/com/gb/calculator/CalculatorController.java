@@ -38,14 +38,20 @@ public class CalculatorController extends Application {
 
 
     public void inputResult(ActionEvent actionEvent) throws EvaluationException, ParseException {
-        String text = output.getText();
-        Expression expression = new Expression(text);
-        EvaluationValue result = expression.evaluate();
-        Button button = (Button) actionEvent.getSource();
-        String digit = button.getText();
-        output.appendText(digit);
-        output.appendText(result.getStringValue());
-        isResult = true;
+        try{
+            String text = output.getText();
+            Expression expression = new Expression(text);
+            EvaluationValue result = expression.evaluate();
+            Button button = (Button) actionEvent.getSource();
+            String digit = button.getText();
+            output.appendText(digit);
+            output.appendText(result.getStringValue());
+            isResult = true;
+        } catch (EvaluationException | ParseException e){
+            output.clear();
+            output.appendText("error");
+            isResult = true;
+        }
     }
 
     public void cencel(ActionEvent actionEvent) {
