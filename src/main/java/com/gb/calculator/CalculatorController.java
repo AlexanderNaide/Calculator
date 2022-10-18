@@ -22,8 +22,6 @@ public class CalculatorController extends Application {
     public TextField output;
     public Label memoryOutput;
     boolean isResult = false;
-
-    Double finalResult = 0.0;
     EvaluationValue result;
 
     @Override
