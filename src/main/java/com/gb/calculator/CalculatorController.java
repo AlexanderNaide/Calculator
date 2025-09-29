@@ -28,7 +28,7 @@ public class CalculatorController extends Application {
     public void start(Stage stage) throws Exception {
         Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("calculator.fxml")));
         stage.setScene(new Scene(parent));
-        stage.setTitle("Calculator - Alt");
+        stage.setTitle("Calculator - Alt2");
         stage.show();
     }
 
